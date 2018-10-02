@@ -5,6 +5,7 @@ import RecipeMain from "./Recipes/RecipeMain";
 import NavBar from "./Nav/NavBar";
 import ExampleComponent from "./ExampleComponent";
 import HomePage from "./Home/HomePage";
+import RecipeDetail from "./Recipes/RecipeDetail";
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/recipes" component={RecipeMain} />
+            <Route path="/recipe/:id" component={RecipeDetail} />
             <Route path="/example" component={ExampleComponent} />
           </Switch>
         </Container>
