@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { Recipe } from './Recipe';
-import { Segment } from 'semantic-ui-react'
+import React, { Component } from "react";
+import { Recipe } from "./Recipe";
 
 class RecipeFeed extends Component {
   render() {
@@ -8,26 +7,11 @@ class RecipeFeed extends Component {
     return (
       <div>
         {recipes.map(recipe => (
-          <Segment raised>
-            <Recipe 
-              key={recipe.id}
-              recipe={recipe}
-            />
-          </Segment>
+          <Recipe key={recipe.id} recipe={recipe} />
         ))}
       </div>
-    )
+    );
   }
 }
 
-export default RecipeFeed
-
-
-
-// {events.map(event => (
-//   <EventListItem
-//     key={event.id}
-//     event={event}
-//     deleteEvent={deleteEvent}
-//   />
-// ))}
+export default RecipeFeed;
