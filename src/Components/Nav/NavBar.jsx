@@ -11,6 +11,7 @@ class NavBar extends Component {
     this.setState({
       loggedIn: true
     });
+    this.props.history.push("/recipes")
   };
 
   handleLogout = () => {
@@ -25,10 +26,6 @@ class NavBar extends Component {
     return (
       <Menu size="huge" fixed="top">
         <Menu.Item as={Link} to="/recipes" name="Bread Baker's Apprentice" header />
-        {loggedIn && (
-          <Menu.Item as={NavLink} to="/myrecipes" name="My Recipes" />
-        )}
-
         <Menu.Item as={NavLink} to="/example" name="Example" />
         <Menu.Item position="right">
           {loggedIn ? (
