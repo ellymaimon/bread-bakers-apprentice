@@ -6,14 +6,19 @@ import App from "./Components/App";
 import registerServiceWorker from "./registerServiceWorker";
 import { Provider } from "react-redux";
 import { storeConfig } from "./Store/storeConfig";
+import { BrowserRouter } from "react-router-dom";
 
 const store = storeConfig();
 
 let render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <App />
-    </Provider>, document.getElementById("root"));
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>,
+    document.getElementById("root")
+  );
 };
 
 if (module.hot) {
