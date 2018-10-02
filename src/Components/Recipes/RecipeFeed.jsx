@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { Recipe } from './Recipe';
+import { Item } from 'semantic-ui-react'
 
 class RecipeFeed extends Component {
   render() {
     return (
-      <div>
-        <h1>Recipe Feed</h1>
-      </div>
+      <Item.Group>
+        <Recipe />
+      </Item.Group>
     )
   }
 }
