@@ -7,7 +7,7 @@ class Ingredient extends Component {
     return (
       <List.Item>
         {ingredient.forPreferment && `For ${ingredient.forPreferment}: `}
-        {ingredient.quantity} {ingredient.measurement} of{" "}
+        {ingredient.grams} grams of{" "}
         {ingredient.temperature && ingredient.temperature} {ingredient.name}
       </List.Item>
     );
