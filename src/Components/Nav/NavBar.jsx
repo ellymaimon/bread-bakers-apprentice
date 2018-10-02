@@ -23,8 +23,8 @@ class NavBar extends Component {
   render() {
     const { loggedIn } = this.state;
     return (
-      <Menu size="huge" inverted fixed="top">
-        <Menu.Item as={Link} to="/" name="Home" header />
+      <Menu size="huge" fixed="top">
+        <Menu.Item as={Link} to="/recipes" name="Bread Baker's Apprentice" header />
         {loggedIn && (
           <Menu.Item as={NavLink} to="/myrecipes" name="My Recipes" />
         )}
@@ -32,14 +32,9 @@ class NavBar extends Component {
         <Menu.Item as={NavLink} to="/example" name="Example" />
         <Menu.Item position="right">
           {loggedIn ? (
-            <Button
-              onClick={this.handleLogout}
-              basic
-              inverted
-              content="Logout"
-            />
+            <Button onClick={this.handleLogout} basic content="Logout" />
           ) : (
-            <Button onClick={this.handleLogin} basic inverted content="Login" />
+            <Button onClick={this.handleLogin} basic content="Login" />
           )}
         </Menu.Item>
       </Menu>
