@@ -4,7 +4,8 @@ import { Button } from 'semantic-ui-react'
 import { incrementCounter, decrementCounter } from '../Actions/exampleActions'
 
 const mapState = (state) => ({
-  data: state.example.data
+  data: state.example.data,
+  bottles: state.example.bottles
 })
 
 const actions = {
@@ -14,11 +15,11 @@ const actions = {
 
 class ExampleComponent extends Component {
   render() {
-    const {incrementCounter, decrementCounter, data} = this.props;
+    const {incrementCounter, decrementCounter, data, bottles} = this.props;
     return (
       <div>
         <h1>Test Area</h1>
-        <h3>The answer is: {data}</h3>
+        <h3>The answer is: {data} {bottles}</h3>
         <Button onClick={incrementCounter} color='green' content='increment' />
         <Button onClick={decrementCounter} color='red' content='decrement' />
       </div>
