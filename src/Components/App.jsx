@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import RecipeHome from "./Recipes/RecipeHome";
-import  NavBar from "./Nav/NavBar";
 import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
+import RecipeMain from "./Recipes/RecipeMain";
+import NavBar from "./Nav/NavBar";
 import ExampleComponent from "./ExampleComponent";
+import HomePage from "./Home/HomePage";
 
 class App extends Component {
   render() {
@@ -12,7 +13,9 @@ class App extends Component {
         <NavBar />
         <Container className="main">
           <Switch>
-            <Route exact path="/" component={RecipeHome} />
+            <Route exact path="/" component={HomePage} />
+            <Route path="/recipes" component={RecipeMain} />
+            {/* <Route path="/myrecipes" component={ExampleComponent} /> */}
             <Route path="/example" component={ExampleComponent} />
           </Switch>
         </Container>
