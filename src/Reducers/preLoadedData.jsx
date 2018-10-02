@@ -1,9 +1,3 @@
-export const ingredients = {
-  flours: [],
-  salts: [],
-  yeasts: [],
-}
-
 export const dummyRecipes = [
   {
     id: "1",
@@ -11,41 +5,42 @@ export const dummyRecipes = [
     date: "2018-03-27",
     photoURL: "/assets/tartine.jpg",
     hydration: "75%",
+    createdBy: "Joe Peter",
     description: "The country bread from Tartine Bakery in San Francisco has reached cult status among passionate bakers, and deservedly so.",
     ingredients: [
       {
         id: 1,
         name: "Leaven",
-        quantity: 200,
-        measurement: "grams",
+        grams: 200,
+        ounces: "",
         category: "leaven",
       },
       {
         id: 2,
         name: "Bread Flour",
-        quantity: 900,
-        measurement: "grams",
+        grams: 900,
+        ounces: "",
         category: "flour",
       },
       {
         id: 3,
         name: "Whole Wheat Flour",
-        quantity: 100,
-        measurement: "grams",
+        grams: 100,
+        ounces: "",
         category: "flour",
       },
       {
         id: 4,
         name: "Fine Sea Salt",
-        quantity: 20,
-        measurement: "grams",
+        grams: 20,
+        ounces: "",
         category: "salt",
       },
       {
         id: 5,
         name: "Water",
-        quantity: 750,
-        measurement: "grams",
+        grams: 750,
+        ounces: "",
         category: "water",
         temperature: "80°"
       }
@@ -119,13 +114,14 @@ export const dummyRecipes = [
     date: "2018-07-27",
     photoURL: "/assets/baguette.jpg",
     hydration: "75%",
+    createdBy: "Sally Waldorf",
     description: "These crunchy baguettes feature a chewy interior riddled with holes, and a crisp, deep-gold crust.",
     ingredients: [
       {
         id: 1,
         name: "Water",
-        quantity: 113,
-        measurement: "grams",
+        grams: 113,
+        ounces: "",
         category: "water",
         temperature: "cool",
         forPreferment: "starter"
@@ -133,46 +129,46 @@ export const dummyRecipes = [
       {
         id: 2,
         name: "Instant Yeast",
-        quantity: 0.19,
-        measurement: "grams",
+        grams: 0.19,
+        ounces: "",
         category: "yeast",
         forPreferment: "starter"
       },
       {
         id: 3,
         name: "All-Purpose Flour",
-        quantity: 120,
-        measurement: "grams",
+        grams: 120,
+        ounces: "",
         category: "flour",
         forPreferment: "starter"
       },
       {
         id: 4,
         name: "Instant Yeast",
-        quantity: 4.65,
-        measurement: "grams",
+        grams: 4.65,
+        ounces: "",
         category: "yeast",
       },
       {
         id: 5,
         name: "Water",
-        quantity: 255,
-        measurement: "grams",
+        grams: 255,
+        ounces: "",
         category: "water",
         temperature: "lukewarm",
       },
       {
         id: 6,
         name: "All-Purpose Flour",
-        quantity: 418,
-        measurement: "grams",
+        grams: 418,
+        ounces: "",
         category: "flour",
       },
       {
         id: 6,
         name: "Salt",
-        quantity: 11.38,
-        measurement: "grams",
+        grams: 11.38,
+        ounces: "",
         category: "salt",
       },
     ],
