@@ -2,7 +2,8 @@ import { createReducer } from '../Reducers/reducerUtility';
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../Constants/exampleConstants'
 
 const initialState = {
-  data: 66
+  bottles: "bottles of beer on the wall",
+  data: 99
 };
 
 export const incrementCounter = (state, payload) => {
