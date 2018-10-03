@@ -5,14 +5,11 @@ import Instruction from "./Instruction";
 const RecipeInstructions = ({ recipe }) => {
   return (
     <Segment.Group>
-      <Segment textAlign="center" attached="top" color="orange">
+      <Segment textAlign="center" attached="top" color="orange" style={{borderBottom: "none"}}>
         <Header as="h2">Instructions</Header>
       </Segment>
       <Segment attached>
         <List>
-          <List.Description style={{ marginBottom: "2em" }}>
-            {recipe.description}
-          </List.Description>
           {recipe.instructions.map(instruction => (
             <Instruction instruction={instruction} key={instruction.stepNumber} />
           ))}
