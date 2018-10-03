@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Header, Icon } from "semantic-ui-react";
+import { Segment, Header, Icon, List } from "semantic-ui-react";
 
 const detailStyle = {
   fontSize: "1.3em",
@@ -8,30 +8,30 @@ const detailStyle = {
 };
 
 const RecipeDetailHeader = ({ recipe }) => {
-
-  const getTotalWeight = (ingredients) => {
+  const getTotalWeight = ingredients => {
     let totalWeight = 0;
-    ingredients.forEach((ingredient) => {
+    ingredients.forEach(ingredient => {
       totalWeight += ingredient.grams;
-    })
+    });
     return `${totalWeight} grams`;
-  }
+  };
 
-  const getTotalTime = (instructions) => {
+  const getTotalTime = instructions => {
     let totalMinutes = 0;
-    instructions.forEach((instruction) => {
-      if(instruction.minutes !== undefined) {
+    instructions.forEach(instruction => {
+      if (instruction.minutes !== undefined) {
         totalMinutes += instruction.minutes;
       }
-    })
-    console.log(totalMinutes);
-    
+    });
     return `${Math.floor(totalMinutes / 60)} H, ${totalMinutes % 60} M`;
-  }
+  };
 
   return (
     <Segment color="orange">
       <Header as="h1">{recipe.title}</Header>
+      <List.Description style={{ marginBottom: "2em" }}>
+        {recipe.description}
+      </List.Description>
       <span style={detailStyle}>
         <Icon name="tint" />
         {recipe.hydration}
