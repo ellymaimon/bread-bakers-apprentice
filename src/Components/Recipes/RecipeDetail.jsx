@@ -32,7 +32,7 @@ const RecipeDetail = ({ recipe }) => {
         </Segment>
         <Segment attached>
           {recipe.ingredients.map(ingredient => (
-            <Ingredient ingredient={ingredient} />
+            <Ingredient ingredient={ingredient} key={ingredient.id} />
           ))}
         </Segment>
         <Segment>
