@@ -6,7 +6,9 @@ class Instruction extends Component {
     const { instruction } = this.props;
     return (
       <List.Item style={{ marginBottom: "2em" }}>
-        Step {instruction.stepNumber}: {instruction.step}
+        <List.Header>
+          Step {instruction.stepNumber}: {instruction.step}
+        </List.Header>
         <Divider />
         {instruction.instruction}
       </List.Item>
