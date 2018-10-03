@@ -49,7 +49,8 @@ export const dummyRecipes = [
       {
         stepNumber: 1,
         step: "Make the Leaven",
-        instruction: "Mix 1 tablespoon starter with 200g warm water. Add 200g of white/wheat flour mix and combine. Let rest 12 hours, or until tablespoon of leaven floats in room temp water."
+        instruction: "Mix 1 tablespoon starter with 200g warm water. Add 200g of white/wheat flour mix and combine. Let rest 12 hours, or until tablespoon of leaven floats in room temp water.",
+        minutes: 720
       },
       {
         stepNumber: 2,
@@ -59,7 +60,8 @@ export const dummyRecipes = [
       {
         stepNumber: 3,
         step: "Add Flour",
-        instruction: "Add 900 grams of white-bread flour and 100 grams of whole-wheat flour to bowl and use your hands to mix until no traces of dry flour remain. The dough will be sticky and ragged. Cover bowl with a towel and let dough rest for 25 to 40 minutes at room temperature."
+        instruction: "Add 900 grams of white-bread flour and 100 grams of whole-wheat flour to bowl and use your hands to mix until no traces of dry flour remain. The dough will be sticky and ragged. Cover bowl with a towel and let dough rest for 25 to 40 minutes at room temperature.",
+        minutes: 35
       },
       {
         stepNumber: 4,
@@ -69,17 +71,20 @@ export const dummyRecipes = [
       {
         stepNumber: 5,
         step: "Let Dough Rise",
-        instruction: "Cover with a towel and let the dough rise for 30 minutes at about 75-80°F."
+        instruction: "Cover with a towel and let the dough rise for 30 minutes at about 75-80°F.",
+        minutes: 30
       },
       {
         stepNumber: 6,
         step: "Fold Dough",
-        instruction: "Fold dough by dipping hand in water, taking hold of the underside of the dough at one quadrant and stretching it up over the rest of the dough. Repeat this action 3 more times, rotating bowl a quarter turn for each fold. Do this every half-hour for 2 1/2 hours more (3 hours total). The dough should be billowy and increase in volume 20 to 30 percent. If not, continue to let rise and fold for up to an hour more."
+        instruction: "Fold dough by dipping hand in water, taking hold of the underside of the dough at one quadrant and stretching it up over the rest of the dough. Repeat this action 3 more times, rotating bowl a quarter turn for each fold. Do this every half-hour for 2 1/2 hours more (3 hours total). The dough should be billowy and increase in volume 20 to 30 percent. If not, continue to let rise and fold for up to an hour more.",
+        minutes: 180
       },
       {
         stepNumber: 7,
         step: "Cut, Round, and Rest",
-        instruction: "Transfer dough to a work surface and dust top with flour. Use a dough scraper to cut dough into 2 equal pieces and flip them over so floured sides are face down. Fold the cut side of each piece up onto itself so the flour on the surface remains entirely on the outside of the loaf; this will become the crust. Work dough into taut rounds. Place the dough rounds on a work surface, cover with a towel, and let rest 30 minutes."
+        instruction: "Transfer dough to a work surface and dust top with flour. Use a dough scraper to cut dough into 2 equal pieces and flip them over so floured sides are face down. Fold the cut side of each piece up onto itself so the flour on the surface remains entirely on the outside of the loaf; this will become the crust. Work dough into taut rounds. Place the dough rounds on a work surface, cover with a towel, and let rest 30 minutes.",
+        minutes: 30
       },
       {
         stepNumber: 8,
@@ -94,17 +99,20 @@ export const dummyRecipes = [
       {
         stepNumber: 10,
         step: "Final Rest",
-        instruction: "Transfer rounds, seam-side up, to prepared baskets. Cover with a towel and return dough to the 75- to 80-degree environment for 3 to 4 hours. (Or let dough rise for 10 to 12 hours in the refrigerator. Bring back to room temperature before baking.)"
+        instruction: "Transfer rounds, seam-side up, to prepared baskets. Cover with a towel and return dough to the 75- to 80-degree environment for 3 to 4 hours. (Or let dough rise for 10 to 12 hours in the refrigerator. Bring back to room temperature before baking.)",
+        minutes: 210
       },
       {
         stepNumber: 11,
         step: "Score & Bake First Loaf",
-        instruction: "About 30 minutes before baking, place a Dutch oven or lidded cast-iron pot in the oven and heat it to 500 degrees. Dust tops of dough, still in their baskets, with whole-wheat/rice-flour mixture. Very carefully remove heated pot from oven and gently turn 1 loaf into pan seam-side down. Use a lame (a baker’s blade) or razor blade to score the top of the bread a few times to allow for expansion, cover and transfer to oven. Reduce temperature to 450 degrees and cook for 20 minutes. Carefully remove lid (steam may release) and cook for 20 more minutes or until crust is a rich, golden brown color."
+        instruction: "About 30 minutes before baking, place a Dutch oven or lidded cast-iron pot in the oven and heat it to 500 degrees. Dust tops of dough, still in their baskets, with whole-wheat/rice-flour mixture. Very carefully remove heated pot from oven and gently turn 1 loaf into pan seam-side down. Use a lame (a baker’s blade) or razor blade to score the top of the bread a few times to allow for expansion, cover and transfer to oven. Reduce temperature to 450 degrees and cook for 20 minutes. Carefully remove lid (steam may release) and cook for 20 more minutes or until crust is a rich, golden brown color.",
+        minutes: 40
       },
       {
         stepNumber: 12,
-        step: "Score & Bake Second Loaf",
-        instruction: "Transfer bread to a wire rack to cool for at least 15 minutes before slicing. The bottom of the loaf should sound hollow when tapped. Increase oven temperature to 500 degrees, clean out pot and repeat this process with the second loaf."
+        step: "Score & Bake Second Loaf / Cool Loaves",
+        instruction: "Transfer bread to a wire rack to cool for at least 15 minutes before slicing. The bottom of the loaf should sound hollow when tapped. Increase oven temperature to 500 degrees, clean out pot and repeat this process with the second loaf.",
+        minutes: 60
       },
     ]
   },
@@ -165,7 +173,7 @@ export const dummyRecipes = [
         category: "flour",
       },
       {
-        id: 6,
+        id: 7,
         name: "Salt",
         grams: 11.38,
         ounces: "",
