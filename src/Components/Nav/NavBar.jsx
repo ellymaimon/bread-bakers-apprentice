@@ -34,7 +34,14 @@ class NavBar extends Component {
         <Menu.Item as={NavLink} to="/example" name="Example" />
         {loggedIn ? (
           <Menu.Item position="right">
-            <Button content="Create Recipe" color="orange" inverted style={{ marginRight: "0.5em" }}/>
+            <Button
+              as={Link}
+              to="/createrecipe"
+              content="Create Recipe"
+              color="orange"
+              inverted
+              style={{ marginRight: "0.5em" }}
+            />
             <Button onClick={this.handleLogout} basic content="Logout" />
           </Menu.Item>
         ) : (
