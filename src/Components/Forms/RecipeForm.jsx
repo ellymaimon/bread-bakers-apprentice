@@ -7,10 +7,16 @@ import {
   Button,
   Icon,
   Grid,
-  List
+  List,
+  Message
 } from "semantic-ui-react";
 import cuid from "cuid";
-import { combineValidators, isRequired } from "revalidate";
+import {
+  combineValidators,
+  composeValidators,
+  isRequired,
+  isNumeric
+} from "revalidate";
 import { Field, FieldArray, reduxForm } from "redux-form";
 import { createRecipe } from "../../Actions/recipeActions";
 import TextInput from "./TextInput";
@@ -34,9 +40,16 @@ const actions = {
   createRecipe
 };
 
-const formValidation = combineValidators({
+const validate = combineValidators({
   title: isRequired({ message: "The recipe title is required" }),
-  description: isRequired({ message: "The recipe description is required" })
+  description: isRequired({ message: "The recipe description is required" }),
+  "ingredients[0].name": isRequired({
+    message: "The ingredient name is required"
+  }),
+  "ingredients[0].grams": composeValidators(
+    isNumeric({ message: "Grams must be a number" }),
+    isRequired({ message: "Ingredient weight is required" })
+  )()
 });
 
 const renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
@@ -67,7 +80,7 @@ const renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
         />
         <Button
           type="button"
-          content="Remove Ingredient"
+          name="Remove Ingredient"
           onClick={() => fields.remove(index)}
           style={{ marginBottom: "0.8em" }}
         >
@@ -87,11 +100,15 @@ class RecipeForm extends Component {
       const newRecipe = {
         ...values,
         id: cuid(),
-        photoURL: "/assets/user.png",
+        photoURL: "/assets/placeholder.jpg",
         createdBy: "Epicodus Student"
       };
-      this.props.createRecipe(newRecipe);
-      this.props.history.push("/recipes");
+      if (newRecipe.ingredients && newRecipe.instructions) {
+        this.props.createRecipe(newRecipe);
+        this.props.history.push("/recipes");
+      } else {
+        alert("Please add ingredients and instructions!");
+      }
     }
   };
 
@@ -136,6 +153,11 @@ class RecipeForm extends Component {
               </Button>
               <FieldArray name="ingredients" component={renderIngredients} />
             </Form>
+            {/* <Message attached="bottom" hidden warning>
+              <Message.Header>
+                You must add ingredients and instructions to your recipe before you can submit it!
+              </Message.Header>
+            </Message> */}
           </Segment>
         </Grid.Column>
         <Grid.Column width={6}>
@@ -159,7 +181,7 @@ export default connect(
   mapState,
   actions
 )(
-  reduxForm({ form: "recipeForm", enableReinitialize: true, formValidation })(
+  reduxForm({ form: "recipeForm", enableReinitialize: true, validate })(
     RecipeForm
   )
 );
