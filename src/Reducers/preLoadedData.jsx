@@ -5,8 +5,9 @@ export const dummyRecipes = [
     date: "2018-03-27",
     photoURL: "/assets/tartine.jpg",
     hydration: "75%",
-    createdBy: "Joe Peter",
+    createdBy: "Chad Robertson",
     description: "The country bread from Tartine Bakery in San Francisco has reached cult status among passionate bakers, and deservedly so.",
+    totalFlourGrams: 1000,
     ingredients: [
       {
         id: 1,
@@ -14,6 +15,7 @@ export const dummyRecipes = [
         grams: 200,
         ounces: "",
         category: "leaven",
+        bakersPercentage: "20%"
       },
       {
         id: 2,
@@ -21,6 +23,7 @@ export const dummyRecipes = [
         grams: 900,
         ounces: "",
         category: "flour",
+        bakersPercentage: "90%"
       },
       {
         id: 3,
@@ -28,6 +31,7 @@ export const dummyRecipes = [
         grams: 100,
         ounces: "",
         category: "flour",
+        bakersPercentage: "10%"
       },
       {
         id: 4,
@@ -35,6 +39,7 @@ export const dummyRecipes = [
         grams: 20,
         ounces: "",
         category: "salt",
+        bakersPercentage: "2%"
       },
       {
         id: 5,
@@ -42,6 +47,7 @@ export const dummyRecipes = [
         grams: 750,
         ounces: "",
         category: "water",
+        bakersPercentage: "75%",
         temperature: "80°"
       }
     ],
@@ -124,6 +130,7 @@ export const dummyRecipes = [
     hydration: "75%",
     createdBy: "Sally Waldorf",
     description: "These crunchy baguettes feature a chewy interior riddled with holes, and a crisp, deep-gold crust.",
+    totalFlourGrams: 538,
     ingredients: [
       {
         id: 1,
@@ -132,7 +139,8 @@ export const dummyRecipes = [
         ounces: "",
         category: "water",
         temperature: "cool",
-        forPreferment: "starter"
+        forPreferment: "starter",
+        bakersPercentage: "21%"
       },
       {
         id: 2,
@@ -140,7 +148,7 @@ export const dummyRecipes = [
         grams: 0.19,
         ounces: "",
         category: "yeast",
-        forPreferment: "starter"
+        forPreferment: "starter",
       },
       {
         id: 3,
@@ -148,7 +156,8 @@ export const dummyRecipes = [
         grams: 120,
         ounces: "",
         category: "flour",
-        forPreferment: "starter"
+        forPreferment: "starter",
+        bakersPercentage: "22%"
       },
       {
         id: 4,
@@ -156,6 +165,7 @@ export const dummyRecipes = [
         grams: 4.65,
         ounces: "",
         category: "yeast",
+        bakersPercentage: "0.86%"
       },
       {
         id: 5,
@@ -164,6 +174,7 @@ export const dummyRecipes = [
         ounces: "",
         category: "water",
         temperature: "lukewarm",
+        bakersPercentage: "47%"
       },
       {
         id: 6,
@@ -171,6 +182,7 @@ export const dummyRecipes = [
         grams: 418,
         ounces: "",
         category: "flour",
+        bakersPercentage: "78%"
       },
       {
         id: 7,
@@ -178,28 +190,80 @@ export const dummyRecipes = [
         grams: 11.38,
         ounces: "",
         category: "salt",
+        bakersPercentage: "2.1%"
       },
     ],
     instructions: [
       {
         stepNumber: 1,
         step: "Make the Starter",
-        instruction: "To make the starter: Mix all starter ingredients together to make a soft dough. Cover and let rest at room temperature for about 14 hours; overnight works well. The starter should have expanded and become bubbly."
+        instruction: "To make the starter: Mix all starter ingredients together to make a soft dough. Cover and let rest at room temperature for about 14 hours; overnight works well. The starter should have expanded and become bubbly.",
+        minutes: 840
       },
       {
         stepNumber: 2,
         step: "Make Dough",
-        instruction: "Mix and knead all dough ingredients together to make a soft, somewhat smooth dough; it should be cohesive, but the surface may still be a bit rough. If you're using a stand mixer, knead for about 4 minutes on medium-low speed (speed 2 on a KitchenAid); the finished dough should stick a bit at the bottom of the bowl."
+        instruction: "Mix and knead all dough ingredients together to make a soft, somewhat smooth dough; it should be cohesive, but the surface may still be a bit rough. If you're using a stand mixer, knead for about 4 minutes on medium-low speed (speed 2 on a KitchenAid); the finished dough should stick a bit at the bottom of the bowl.",
+        minutes: 8
       },
       {
         stepNumber: 3,
         step: "Rise and Deflate",
-        instruction: "Place the dough in a lightly greased medium-sized bowl, cover the bowl, and let the dough rise for 90 minutes, gently deflating it, folding the edges into the center, and turning it over after 45 minutes."
+        instruction: "Place the dough in a lightly greased medium-sized bowl, cover the bowl, and let the dough rise for 90 minutes, gently deflating it, folding the edges into the center, and turning it over after 45 minutes.",
+        minutes: 135
       },
       {
         stepNumber: 4,
         step: "Divide into Three",
         instruction: "Turn the dough out onto a lightly greased work surface. Gently deflate it, and divide it into three equal pieces."
+      },
+      {
+        stepNumber: 5,
+        step: "Round & Rest",
+        instruction: "Round each piece of dough into a rough ball by pulling the edges into the center. Cover with greased plastic wrap, and let rest for 15 minutes; or for up to 1 hour, if that works better with your schedule.",
+        minutes: 15
+      },
+      {
+        stepNumber: 6,
+        step: "Flatten & Fold",
+        instruction: "Working with one piece at a time, flatten the dough slightly then fold it nearly (but not quite) in half, sealing the edges with the heel of your hand. Turn the dough around, and repeat: fold, then flatten. Repeat this whole process again; the dough should have started to elongate itself."
+      },
+      {
+        stepNumber: 7,
+        step: "Roll Out Baguettes",
+        instruction: "With the seam side down, cup your fingers and gently roll the dough into a 16\" log. Your goal is a 15\" baguette, so 16\" allows for the slight shrinkage you'll see once you're done rolling. Taper each end of the log slightly to create the baguette's typical pointy end."
+      },
+      {
+        stepNumber: 8,
+        step: "Rest & Rise",
+        instruction: "Place the logs seam-side down onto a lightly greased or parchment-lined sheet pan or pans; or into the folds of a heavily floured cotton dish towel (or couche). Cover them with lightly greased plastic wrap, and allow the loaves to rise until they're slightly puffy (\"marshmallow-y\" is the term we use in our baking school). The loaves should certainly look lighter and less dense than when you first shaped them, but won't be anywhere near doubled in bulk. This should take about 45 minutes to an hour at room temperature (about 68°F).",
+        minutes: 45
+      },
+      {
+        stepNumber: 9,
+        step: "Prep the Oven",
+        instruction: "Towards the end of the rising time, preheat your oven to 450°F with a cast iron pan on the floor of the oven, or on the lowest rack. If you're using a baking stone, place it on a middle rack. Start to heat 1 1/2 cups water to boiling."
+      },
+      {
+        stepNumber: 10,
+        step: "Prep Baguettes for Scoring",
+        instruction: "If your baguettes have risen in a dish towel or couche, gently roll them (seam side down) onto a lightly greased (or parchment-lined) baking sheet. If you plan on baking them on a baking stone, roll them onto a piece of parchment, and lift the parchment onto a baker's peel."
+      },
+      {
+        stepNumber: 11,
+        step: "Score the Baguettes",
+        instruction: "Using a baker's lame (a special curved blade) or a very sharp knife held at about a 45° angle, make three to five long lengthwise slashes in each baguette."
+      },
+      {
+        stepNumber: 12,
+        step: "Generate Steam in the Oven",
+        instruction: "Load the baguettes into the oven. If you’re baking on a stone, use a baker’s peel to transfer the baguettes, parchment and all, onto the hot stone. Carefully pour the boiling water into the cast iron pan, and quickly shut the oven door. The billowing steam created by the boiling water will help the baguettes rise, and give them a lovely, shiny crust."
+      },
+      {
+        stepNumber: 13,
+        step: "Bake and Cool",
+        instruction: "Bake the baguettes — on the pan, or on a stone — for 24 to 28 minutes, or until they're a very deep golden brown. Remove them from the oven and cool them on a rack. Or, for the very crispiest baguettes, turn off the oven, crack it open about 2\", and allow the baguettes to cool completely in the oven, until both baguettes and oven are at room temperature.",
+        minutes: 45
       },
     ]
   }
