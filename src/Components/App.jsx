@@ -6,6 +6,7 @@ import NavBar from "./Nav/NavBar";
 import ExampleComponent from "./ExampleComponent";
 import HomePage from "./Home/HomePage";
 import RecipeDetail from "./Recipes/RecipeDetail";
+import RecipeForm from "./Forms/RecipeForm";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path="/" component={HomePage} />
             <Route path="/recipes" component={RecipeMain} />
             <Route path="/recipe/:id" component={RecipeDetail} />
+            <Route path="/createrecipe" component={RecipeForm} />
             <Route path="/example" component={ExampleComponent} />
           </Switch>
         </Container>
