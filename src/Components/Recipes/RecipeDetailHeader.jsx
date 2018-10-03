@@ -17,6 +17,18 @@ const RecipeDetailHeader = ({ recipe }) => {
     return `${totalWeight} grams`;
   }
 
+  const getTotalTime = (instructions) => {
+    let totalMinutes = 0;
+    instructions.forEach((instruction) => {
+      if(instruction.minutes !== undefined) {
+        totalMinutes += instruction.minutes;
+      }
+    })
+    console.log(totalMinutes);
+    
+    return `${Math.floor(totalMinutes / 60)} H, ${totalMinutes % 60} M`;
+  }
+
   return (
     <Segment color="orange">
       <Header as="h1">{recipe.title}</Header>
@@ -27,6 +39,10 @@ const RecipeDetailHeader = ({ recipe }) => {
       <span style={detailStyle}>
         <Icon name="weight" />
         {getTotalWeight(recipe.ingredients)}
+      </span>
+      <span style={detailStyle}>
+        <Icon name="clock" />
+        {getTotalTime(recipe.instructions)}
       </span>
       <span>By {recipe.createdBy}</span>
     </Segment>
