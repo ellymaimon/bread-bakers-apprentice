@@ -14,7 +14,7 @@ const RecipeInstructions = ({ recipe }) => {
             {recipe.description}
           </List.Description>
           {recipe.instructions.map(instruction => (
-            <Instruction instruction={instruction} />
+            <Instruction instruction={instruction} key={instruction.stepNumber} />
           ))}
         </List>
       </Segment>
