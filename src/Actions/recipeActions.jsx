@@ -1,4 +1,4 @@
-import { CREATE_RECIPE } from '../Constants/exampleConstants';
+import { CREATE_RECIPE } from '../Constants/recipeConstants';
 
 export const createRecipe = () => {
   return {
