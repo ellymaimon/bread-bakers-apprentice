@@ -33,7 +33,7 @@ const HomePage = ({ history }) => {
         onClick={() => history.push("/recipes")}
       >
         {" "}
-        Enter <Icon name="right arrow icon" />{" "}
+        Let's Bake! <Icon name="right arrow icon" />{" "}
       </Button>
     </div>
   );
