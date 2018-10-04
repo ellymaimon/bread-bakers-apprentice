@@ -3,7 +3,6 @@ import { Container } from "semantic-ui-react";
 import { Route, Switch } from "react-router-dom";
 import RecipeMain from "./Recipes/RecipeMain";
 import NavBar from "./Nav/NavBar";
-import ExampleComponent from "./ExampleComponent";
 import HomePage from "./Home/HomePage";
 import RecipeDetail from "./Recipes/RecipeDetail";
 import RecipeForm from "./Forms/RecipeForm";
