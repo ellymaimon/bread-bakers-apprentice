@@ -9,7 +9,7 @@ import {
   isNumeric
 } from "revalidate";
 import { Field, FieldArray, reduxForm } from "redux-form";
-import { createRecipe } from "../../Actions/recipeActions";
+import { createRecipe, updateRecipe } from "../../Actions/recipeActions";
 import TextInput from "./TextInput";
 import TextAreaInput from "./TextAreaInput";
 
@@ -28,7 +28,8 @@ const mapState = (state, ownProps) => {
 };
 
 const actions = {
-  createRecipe
+  createRecipe,
+  updateRecipe
 };
 
 const validate = combineValidators({
@@ -65,7 +66,7 @@ const renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
         />
         <Field
           name={`${ingredients}.grams`}
-          type="number"
+          type="text"
           component={TextInput}
           placeholder="Weight in grams"
         />
@@ -110,7 +111,7 @@ const renderInstructions = ({ fields, meta: { error, submitFailed } }) => (
         />
         <Field
           name={`${instructions}.minutes`}
-          type="number"
+          type="text"
           component={TextInput}
           placeholder="How long will this step take (in minutes)"
         />
