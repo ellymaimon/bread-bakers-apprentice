@@ -127,7 +127,7 @@ export const dummyRecipes = [
     title: "King Arthur's French Baguette",
     date: "2018-07-27",
     photoURL: "/assets/baguette.jpg",
-    hydration: "75%",
+    hydration: "68%",
     createdBy: "Sally Waldorf",
     description: "These crunchy baguettes feature a chewy interior riddled with holes, and a crisp, deep-gold crust.",
     totalFlourGrams: 538,
