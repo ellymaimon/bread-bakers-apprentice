@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export class Recipe extends Component {
   render() {
     const { recipe } = this.props;
+
     return (
       <Segment raised>
         <Item.Group>
