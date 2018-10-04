@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Item, Icon, Popup, Segment } from "semantic-ui-react";
+import { Item, Icon, Popup, Segment, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export class Recipe extends Component {
   render() {
-    const { recipe } = this.props;
+    const { recipe, deleteRecipe } = this.props;
 
     return (
       <Segment raised>
@@ -26,6 +26,13 @@ export class Recipe extends Component {
               <Item.Extra>
                 Created by: {recipe.createdBy} on {recipe.date}
               </Item.Extra>
+              <Button
+                onClick={deleteRecipe(recipe.id)}
+                as="a"
+                color="red"
+                content="Delete"
+                style={{marginTop: "0.8em"}}
+              />
             </Item.Content>
           </Item>
         </Item.Group>
