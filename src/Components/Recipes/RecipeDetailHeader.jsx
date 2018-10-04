@@ -12,6 +12,7 @@ const RecipeDetailHeader = ({ recipe }) => {
   const getTotalWeight = ingredients => {
     let totalWeight = 0;
     ingredients.forEach(ingredient => {
+      // eslint-disable-next-line
       totalWeight += parseInt(ingredient.grams);
     });
     return `${totalWeight} grams`;
@@ -21,6 +22,7 @@ const RecipeDetailHeader = ({ recipe }) => {
     let totalMinutes = 0;
     instructions.forEach(instruction => {
       if (instruction.minutes !== undefined) {
+        // eslint-disable-next-line
         totalMinutes += parseInt(instruction.minutes);
       }
     });
