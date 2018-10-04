@@ -5,6 +5,26 @@ body {
   background-color: rgb(241, 228, 220) !important;
 }
 
+.ui.fixed.menu {
+  background-image: linear-gradient(
+          135deg,
+          rgba(223, 193, 165, 0.397) 0%,
+          rgba(175, 145, 60, 0.315) 69%,
+          rgba(240, 227, 112, 0.24) 89%
+  ) !important;
+}
+
 .main {
   margin-top: 7em;
+}
+
+.homepage {
+  font-size: 105px;
+  font-family: 'Cinzel Decorative', cursive;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  line-height: 69%;
+  color: rgb(246, 172, 117);
+  text-shadow: 3px 3px #000000;
 }
