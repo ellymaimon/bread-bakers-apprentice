@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Grid, Segment, Header, Image, List, Button } from "semantic-ui-react";
+import { Grid, Segment, Header, Image, List, Message } from "semantic-ui-react";
 import Ingredient from "./Ingredient";
 import RecipeDetailHeader from "./RecipeDetailHeader";
 import RecipeInstructions from "./RecipeInstructions";
@@ -36,8 +36,7 @@ const RecipeDetail = ({ recipe }) => {
               <Ingredient ingredient={ingredient} key={ingredient.id} />
             ))}
           </List>
-          <Button>Convert to Imperial</Button>
-          <Button>Convert to Metric</Button>
+          <Message color="orange" attached>Click on the weights to toggle between Metric and Imperial measurements!</Message>
         </Segment>
         <Segment>
           <Image src={recipe.photoURL} size="large" />
