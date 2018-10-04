@@ -139,7 +139,7 @@ class RecipeForm extends Component {
         id: cuid(),
         photoURL: "/assets/placeholder.jpg",
         createdBy: "Elly Maimon",
-        hydration: "70%"
+        hydration: "70%",
       };
       if (newRecipe.ingredients && newRecipe.instructions) {
         this.props.createRecipe(newRecipe);
