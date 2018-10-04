@@ -44,7 +44,11 @@ class Ingredient extends Component {
 
   getOunces =(grams) => {
     grams = grams * 0.035274;
-    return parseFloat(grams).toFixed(2);
+    if (grams > 0 && grams < 1) {
+      return parseFloat(grams).toFixed(4);
+    } else {
+      return parseFloat(grams).toFixed(2);
+    }
   }
 
   render() {
