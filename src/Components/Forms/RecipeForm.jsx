@@ -1,15 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-  Segment,
-  Header,
-  Form,
-  Button,
-  Icon,
-  Grid,
-  List,
-  Message
-} from "semantic-ui-react";
+import { Segment, Header, Form, Button, Icon, Grid } from "semantic-ui-react";
 import cuid from "cuid";
 import {
   combineValidators,
@@ -74,7 +65,7 @@ const renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
         />
         <Field
           name={`${ingredients}.grams`}
-          type="text"
+          type="number"
           component={TextInput}
           placeholder="Weight in grams"
         />
@@ -91,6 +82,51 @@ const renderIngredients = ({ fields, meta: { error, submitFailed } }) => (
   </div>
 );
 
+const renderInstructions = ({ fields, meta: { error, submitFailed } }) => (
+  <div>
+    <Button
+      color="orange"
+      type="button"
+      onClick={() => fields.push({})}
+      style={{ marginTop: "0.8em", marginBottom: "0.8em" }}
+    >
+      <Icon name="add circle" /> Add Instruction Step
+    </Button>
+    {submitFailed && error && <span>{error}</span>}
+    {fields.map((instructions, index) => (
+      <Segment key={index}>
+        <h4>Step #{index + 1}</h4>
+        <Field
+          name={`${instructions}.step`}
+          type="text"
+          component={TextInput}
+          placeholder="Step title"
+        />
+        <Field
+          name={`${instructions}.instruction`}
+          type="text"
+          component={TextAreaInput}
+          placeholder="Step instructions"
+        />
+        <Field
+          name={`${instructions}.minutes`}
+          type="number"
+          component={TextInput}
+          placeholder="How long will this step take (in minutes)"
+        />
+        <Button
+          type="button"
+          name="Remove Ingredient"
+          onClick={() => fields.remove(index)}
+          style={{ marginBottom: "0.8em" }}
+        >
+          <Icon name="remove circle" /> Remove Instruction Step{" "}
+        </Button>
+      </Segment>
+    ))}
+  </div>
+);
+
 class RecipeForm extends Component {
   onFormSubmit = values => {
     if (this.props.initialValues.id) {
@@ -101,7 +137,8 @@ class RecipeForm extends Component {
         ...values,
         id: cuid(),
         photoURL: "/assets/placeholder.jpg",
-        createdBy: "Epicodus Student"
+        createdBy: "Elly Maimon",
+        hydration: "70%"
       };
       if (newRecipe.ingredients && newRecipe.instructions) {
         this.props.createRecipe(newRecipe);
@@ -152,24 +189,8 @@ class RecipeForm extends Component {
                 Cancel
               </Button>
               <FieldArray name="ingredients" component={renderIngredients} />
+              <FieldArray name="instructions" component={renderInstructions} />
             </Form>
-            {/* <Message attached="bottom" hidden warning>
-              <Message.Header>
-                You must add ingredients and instructions to your recipe before you can submit it!
-              </Message.Header>
-            </Message> */}
-          </Segment>
-        </Grid.Column>
-        <Grid.Column width={6}>
-          <Segment textAlign="center" attached="top" color="orange">
-            <Header>Ingredients by Weight & Baker's Percentage</Header>
-          </Segment>
-          <Segment attached>
-            <List divided relaxed>
-              {/* {recipe.ingredients.map(ingredient => (
-                <Ingredient ingredient={ingredient} key={ingredient.id} />
-              ))} */}
-            </List>
           </Segment>
         </Grid.Column>
       </Grid>
