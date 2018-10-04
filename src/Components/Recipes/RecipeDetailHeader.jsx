@@ -53,7 +53,7 @@ const RecipeDetailHeader = ({ recipe }) => {
         color="orange"
         inverted
         floated="right"
-        style={{position: "relative", bottom: "11px"}}
+        style={{ position: "relative", bottom: "11px" }}
       >
         Edit Recipe
       </Button>
