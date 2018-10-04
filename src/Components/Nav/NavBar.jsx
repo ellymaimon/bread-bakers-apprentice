@@ -32,7 +32,6 @@ class NavBar extends Component {
           header
         />
         <Menu.Item as={NavLink} to="/recipes" name="Recipes" />
-        <Menu.Item as={NavLink} to="/example" name="Example" />
         {loggedIn ? (
           <Menu.Item position="right">
             <Button

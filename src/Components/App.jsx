@@ -27,7 +27,6 @@ class App extends Component {
                   <Route path="/recipe/:id" component={RecipeDetail} />
                   <Route path="/manage/:id" component={RecipeForm} />
                   <Route path="/createrecipe" component={RecipeForm} />
-                  <Route path="/example" component={ExampleComponent} />
                 </Switch>
               </Container>
             </div>
