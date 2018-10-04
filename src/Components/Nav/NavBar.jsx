@@ -4,7 +4,7 @@ import { NavLink, Link, withRouter } from "react-router-dom";
 
 class NavBar extends Component {
   state = {
-    loggedIn: true
+    loggedIn: false
   };
 
   handleLogin = () => {
