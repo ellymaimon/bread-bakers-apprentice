@@ -12,16 +12,27 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
-        <Container className="main">
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route path="/recipes" component={RecipeMain} />
-            <Route path="/recipe/:id" component={RecipeDetail} />
-            <Route path="/createrecipe" component={RecipeForm} />
-            <Route path="/example" component={ExampleComponent} />
-          </Switch>
-        </Container>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+        </Switch>
+
+        <Route
+          path="/(.+)"
+          render={() => (
+            <div>
+              <NavBar />
+              <Container className="main">
+                <Switch>
+                  <Route path="/recipes" component={RecipeMain} />
+                  <Route path="/recipe/:id" component={RecipeDetail} />
+                  <Route path="/manage/:id" component={RecipeForm} />
+                  <Route path="/createrecipe" component={RecipeForm} />
+                  <Route path="/example" component={ExampleComponent} />
+                </Switch>
+              </Container>
+            </div>
+          )}
+        />
       </div>
     );
   }
