@@ -27,10 +27,11 @@ class NavBar extends Component {
       <Menu size="huge" fixed="top">
         <Menu.Item
           as={Link}
-          to="/recipes"
+          to="/"
           name="Bread Baker's Apprentice"
           header
         />
+        <Menu.Item as={NavLink} to="/recipes" name="Recipes" />
         <Menu.Item as={NavLink} to="/example" name="Example" />
         {loggedIn ? (
           <Menu.Item position="right">
