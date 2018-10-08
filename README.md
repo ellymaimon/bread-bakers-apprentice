@@ -15,7 +15,13 @@ Bread Baker's Apprentice is a web application made for bread bakers who want to 
 Clone the repo from github to your machine
 
 ```
-git clone https://github.com/ellymaimon/bread-bakers-apprentice
+git clone https://github.com/ellymaimon/bread-bakers-apprentice.git
+```
+
+Then, navigate into the directory
+
+```
+cd bread-bakers-apprentice/
 ```
 
 This program is dependent that you already have node installed on your machine and node package manager. Afterwards run the install command.
