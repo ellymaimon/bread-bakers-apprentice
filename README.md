@@ -1,7 +1,5 @@
 # 🍞 Bread Baker's Apprentice 🍞 
 
-#### Epicodus Capstone Project, October 4th, 2018
-
 #### by Elly Maimon
 
 ## Description
